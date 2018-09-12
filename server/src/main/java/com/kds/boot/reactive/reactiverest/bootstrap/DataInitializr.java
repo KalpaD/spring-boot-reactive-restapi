@@ -20,21 +20,20 @@ class DataInitializr implements CommandLineRunner {
     @Override
     public void run(String[] args) {
         log.info("Start data initialization  ...");
-        Book b1 = Book
-                .builder()
+        Book b1 = Book.builder()
                 .title("BCI")
                 .author("Gyle Maxwell")
                 .isbn("1234-123-445-56").build();
 
         Book b2 = Book.builder()
-        .title("EIP")
-        .author("Adnan Aziz")
-        .isbn("1576-33-44-56").build();
+                .title("EIP")
+                .author("Adnan Aziz")
+                .isbn("1576-33-44-56").build();
 
         Book b3 = Book.builder()
-        .title("Algorithms")
-        .author("R Sedwig")
-        .isbn("1567-34-56-56").build();
+                .title("Algorithms")
+                .author("R Sedwig")
+                .isbn("1567-34-56-56").build();
 
         this.books
                 .deleteAll()
