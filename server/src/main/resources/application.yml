@@ -2,3 +2,6 @@ spring:
   data:
     mongodb:
       uri: mongodb://book_user:pass@localhost:27017/book_db
+
+shop:
+  endpoint: http://localhost:1080/shop-api/shops
