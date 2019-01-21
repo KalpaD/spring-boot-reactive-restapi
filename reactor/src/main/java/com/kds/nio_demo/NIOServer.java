@@ -18,10 +18,10 @@ public class NIOServer {
     private static Selector selector = null;
 
     public static void main(String[] args) {
-        logger("Starting NIOServer...");
+        logger("Starting NIOServer");
         try {
             InetAddress hostIP = InetAddress.getLocalHost();
-            logger(String.format("Trying to accept connections on %s:%d...", hostIP.getHostAddress(), PORT));
+            logger(String.format("Trying to accept connections on %s:%d", hostIP.getHostAddress(), PORT));
             // create selector via open();
             selector = Selector.open();
             // create a server socket channel
@@ -73,7 +73,7 @@ public class NIOServer {
      * @throws IOException  In case of error while accept the connection
      */
     private static void processAcceptEvent(ServerSocketChannel socket, SelectionKey key) throws IOException {
-        logger("Connection Accepted...");
+        logger("Connection Accepted");
         // Accept the connection and make it non-blocking
         SocketChannel socketChannel = socket.accept();
         socketChannel.configureBlocking(false);
@@ -88,18 +88,17 @@ public class NIOServer {
      * @throws IOException
      */
     private static void processReadEvent(SelectionKey key) throws IOException {
-        logger("Handling ReadEvent...");
+        logger("Handling ReadEvent");
         // create a ServerSocketChannel to read the request
         SocketChannel client = (SocketChannel) key.channel();
-        // Set up out 1k buffer to read data into
         ByteBuffer byteBuffer = ByteBuffer.allocate(BUFFER_SIZE);
         client.read(byteBuffer);
         String data = new String(byteBuffer.array()).trim();
         if (data.length() > 0) {
-            logger(String.format("Message Received.....: %s\n", data));
+            logger(String.format("Message Received : %s\n", data));
         } else {
             client.close();
-            logger("Closing Server Connection...");
+            logger("Closing Server Connection");
         }
     }
 
