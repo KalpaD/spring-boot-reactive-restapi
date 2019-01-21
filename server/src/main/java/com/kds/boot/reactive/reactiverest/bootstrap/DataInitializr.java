@@ -39,7 +39,7 @@ class DataInitializr implements CommandLineRunner {
                 .deleteAll()
                 .thenMany(
                         Flux.just(b1, b2, b3)
-                                .flatMap(book -> this.books.save(book))
+                                .flatMap(this.books::save)
                 )
                 .log()
                 .subscribe(

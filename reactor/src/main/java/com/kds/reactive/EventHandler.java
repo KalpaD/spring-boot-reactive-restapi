@@ -1,4 +1,8 @@
 package com.kds.reactive;
 
-public class EventHandler {
+import java.nio.channels.SelectionKey;
+
+public interface EventHandler {
+
+    void handleEvent(SelectionKey key) throws Exception;
 }
