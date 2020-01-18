@@ -45,7 +45,7 @@ public class BookController {
         log.info(">>> GET /books/{}/availability received", id);
         Flux<Shop> shops = bookRepository.findById(id)
                 .doOnNext(book -> log.info("Book Name : " + book.getTitle()))
-                .flatMapMany(book -> shopService.getShops())
+                .flatMapMany(book -> shopService.getShopsRemote())
                 .doOnNext(shop -> log.info("Shop Name : " + shop.getName()));
         log.info("<<< GET /books/{}/availability responding", id);
         return shops;
