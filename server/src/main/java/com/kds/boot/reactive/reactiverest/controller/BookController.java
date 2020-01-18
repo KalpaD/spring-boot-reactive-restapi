@@ -33,7 +33,6 @@ public class BookController {
     public Mono<Book> get(@PathVariable(value = "id") String id) {
         return bookRepository.findById(id);
     }
-
     @GetMapping(value = "/{id}/availability")
     public Flux<Shop> getAvailability(@PathVariable(value = "id") String id) {
         log.info(">>> GET /books/{}/availability received", id);
@@ -45,6 +44,12 @@ public class BookController {
         return shops;
     }
 
+    /**
+     * Create a book in the book db.
+     *
+     * @param book The book details.
+     * @return The status of the book creation.
+     */
     @PostMapping(value = "")
     public Mono<ServerResponse> create(@RequestBody Book book) {
         bookRepository.save(book);

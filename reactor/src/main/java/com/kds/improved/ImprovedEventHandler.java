@@ -1,4 +1,6 @@
 package com.kds.improved;
 
-public class ImprovedEventHandler {
+public interface ImprovedEventHandler {
+
+    void handleEvent () throws Exception;
 }
