@@ -41,15 +41,31 @@ public class ShopServiceImpl implements ShopService {
 
     /**
      * Return a Flux with real world behaviour of data availability over network.
+     * And it demonstrates a reactive flow logged incorrectly and does not match with the real execution path.
      *
      * @return {@link Flux<Shop>}
+     */
+    /*@Override
+    public Flux<Shop> getShopsRemote() {
+        log.info(">>> WebClient invoking the remote service.");
+        Flux<Shop> shopFlux = webClient.get()
+                .retrieve().bodyToFlux(Shop.class);
+        log.info("<<< WebClient received the remote service response");
+        return shopFlux;
+    }*/
+
+    /**
+     * This method demonstrates a reactive flow logged correctly and it matches with the real execution path.
+     * @return
      */
     @Override
     public Flux<Shop> getShopsRemote() {
         log.info(">>> WebClient invoking the remote service.");
         Flux<Shop> shopFlux = webClient.get()
-                .retrieve().bodyToFlux(Shop.class).log();
-        log.info("<<< WebClient received the remote service response");
+                .retrieve().bodyToFlux(Shop.class)
+                .doOnComplete(() -> {
+                    log.info("<<< WebClient received the remote service response");
+                });
         return shopFlux;
     }
 }
