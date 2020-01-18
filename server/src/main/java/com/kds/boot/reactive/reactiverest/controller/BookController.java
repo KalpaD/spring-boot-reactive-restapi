@@ -33,18 +33,15 @@ public class BookController {
     public Mono<Book> get(@PathVariable(value = "id") String id) {
         return bookRepository.findById(id);
     }
-
-    /**
-     * The results of this endpoint is simulated via an artificial network delay by slowdown the shop service response.
-     *
-     * @param id The book id
-     * @return {@link Flux<Shop>}
-     */
-    @GetMapping(value = "/{id}/shops", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<Shop> getShops(@PathVariable(value = "id") String id) {
-        log.info(">>> GET /books/{id}/availability received", id);
-        return bookRepository.findById(id)
-                .flatMapMany( book -> shopService.getShopsLocal(book.getId()));
+    @GetMapping(value = "/{id}/availability")
+    public Flux<Shop> getAvailability(@PathVariable(value = "id") String id) {
+        log.info(">>> GET /books/{}/availability received", id);
+        Flux<Shop> shops = bookRepository.findById(id)
+                .doOnNext(book -> log.info("Book Name : " + book.getTitle()))
+                .flatMapMany(book -> shopService.getShops())
+                .doOnNext(shop -> log.info("Shop Name : " + shop.getName()));
+        log.info("<<< GET /books/{}/availability responding", id);
+        return shops;
     }
 
     /**

@@ -1,0 +1,2395 @@
+2020-01-18 10:32:42,964 INFO [MockServer thread for port: 1080] o.mockserver.mockserver.MockServer [?:?] MockServer started on port: 1080
+2020-01-18 10:32:43,419 INFO [nioEventLoopGroup-3-1] o.mockserver.mock.HttpStateHandler [?:?] resetting all expectations and request logs
+
+2020-01-18 10:33:27,679 INFO [nioEventLoopGroup-3-2] o.mockserver.mock.HttpStateHandler [?:?] creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/shop-api/shops"
+	  },
+	  "times" : {
+	    "remainingTimes" : 3,
+	    "unlimited" : false
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 200,
+	    "headers" : {
+	      "Content-Type" : [ "application/json; charset=utf-8" ],
+	      "Cache-Control" : [ "no-cache, no-store" ]
+	    },
+	    "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	  }
+	}
+
+2020-01-18 10:33:27,773 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/shop-api/shops"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 200,
+	    "headers" : {
+	      "Content-Type" : [ "application/json; charset=utf-8" ],
+	      "Cache-Control" : [ "no-cache, no-store" ]
+	    },
+	    "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	    "delay" : {
+	      "timeUnit" : "SECONDS",
+	      "value" : 5
+	    }
+	  }
+	}
+
+2020-01-18 12:14:08,378 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:14:08,405 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+2020-01-18 12:14:19,390 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:14:19,397 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+2020-01-18 12:29:04,889 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:29:04,897 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+2020-01-18 12:29:08,005 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:29:13,015 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+2020-01-18 12:29:14,537 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:29:19,543 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+2020-01-18 12:29:20,315 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:29:25,322 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+2020-01-18 12:29:26,410 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:29:31,419 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+2020-01-18 12:33:55,084 INFO [MockServer thread for port: 1080] o.mockserver.mockserver.MockServer [?:?] MockServer started on port: 1080
+2020-01-18 12:33:55,721 INFO [nioEventLoopGroup-3-1] o.mockserver.mock.HttpStateHandler [?:?] resetting all expectations and request logs
+
+2020-01-18 12:34:00,984 INFO [nioEventLoopGroup-3-2] o.mockserver.mock.HttpStateHandler [?:?] creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/shop-api/shops"
+	  },
+	  "times" : {
+	    "remainingTimes" : 3,
+	    "unlimited" : false
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 200,
+	    "headers" : {
+	      "Content-Type" : [ "application/json; charset=utf-8" ],
+	      "Cache-Control" : [ "no-cache, no-store" ]
+	    },
+	    "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	  }
+	}
+
+2020-01-18 12:34:01,108 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/shop-api/shops"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 200,
+	    "headers" : {
+	      "Content-Type" : [ "application/json; charset=utf-8" ],
+	      "Cache-Control" : [ "no-cache, no-store" ]
+	    },
+	    "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	    "delay" : {
+	      "timeUnit" : "SECONDS",
+	      "value" : 1
+	    }
+	  }
+	}
+
+2020-01-18 12:34:07,235 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:34:07,248 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+2020-01-18 12:34:08,241 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:34:08,251 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+2020-01-18 12:34:08,926 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:34:08,931 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]"
+	}
+
+2020-01-18 12:34:09,453 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:34:10,463 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 12:34:11,088 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:34:12,097 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 12:34:13,279 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:34:14,289 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 12:44:40,405 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:44:41,413 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 12:45:07,728 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:45:08,741 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 12:45:40,049 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:45:41,057 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 12:51:22,882 INFO [MockServer thread for port: 1080] o.mockserver.mockserver.MockServer [?:?] MockServer started on port: 1080
+2020-01-18 12:51:23,428 INFO [nioEventLoopGroup-3-1] o.mockserver.mock.HttpStateHandler [?:?] resetting all expectations and request logs
+
+2020-01-18 12:51:26,362 INFO [nioEventLoopGroup-3-2] o.mockserver.mock.HttpStateHandler [?:?] creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/shop-api/shops"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 200,
+	    "headers" : {
+	      "Content-Type" : [ "application/json; charset=utf-8" ],
+	      "Cache-Control" : [ "no-cache, no-store" ]
+	    },
+	    "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	    "delay" : {
+	      "timeUnit" : "SECONDS",
+	      "value" : 1
+	    }
+	  }
+	}
+
+2020-01-18 12:51:44,422 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 12:51:45,442 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 13:17:50,817 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:17:51,829 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 13:18:18,569 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:18:19,579 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 13:20:13,717 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:20:14,731 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 13:20:17,674 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:20:18,685 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 13:25:23,621 INFO [nioEventLoopGroup-3-6] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:25:24,631 INFO [nioEventLoopGroup-3-6] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 13:25:28,098 INFO [nioEventLoopGroup-3-6] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:25:29,107 INFO [nioEventLoopGroup-3-6] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 1
+	  }
+	}
+
+2020-01-18 13:26:24,729 INFO [MockServer thread for port: 1080] o.mockserver.mockserver.MockServer [?:?] MockServer started on port: 1080
+2020-01-18 13:26:25,293 INFO [nioEventLoopGroup-3-1] o.mockserver.mock.HttpStateHandler [?:?] resetting all expectations and request logs
+
+2020-01-18 13:26:28,305 INFO [nioEventLoopGroup-3-2] o.mockserver.mock.HttpStateHandler [?:?] creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/shop-api/shops"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 200,
+	    "headers" : {
+	      "Content-Type" : [ "application/json; charset=utf-8" ],
+	      "Cache-Control" : [ "no-cache, no-store" ]
+	    },
+	    "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	    "delay" : {
+	      "timeUnit" : "SECONDS",
+	      "value" : 3
+	    }
+	  }
+	}
+
+2020-01-18 13:27:05,291 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:27:08,311 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+2020-01-18 13:27:11,841 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:27:14,851 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+2020-01-18 13:27:42,177 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:27:45,186 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+2020-01-18 13:27:48,043 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:27:51,047 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+2020-01-18 13:28:32,850 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:28:34,422 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:28:35,857 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+2020-01-18 13:28:37,431 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 3
+	  }
+	}
+
+2020-01-18 13:30:31,773 INFO [MockServer thread for port: 1080] o.mockserver.mockserver.MockServer [?:?] MockServer started on port: 1080
+2020-01-18 13:30:32,293 INFO [nioEventLoopGroup-3-1] o.mockserver.mock.HttpStateHandler [?:?] resetting all expectations and request logs
+
+2020-01-18 13:30:34,989 INFO [nioEventLoopGroup-3-2] o.mockserver.mock.HttpStateHandler [?:?] creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/shop-api/shops"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 200,
+	    "headers" : {
+	      "Content-Type" : [ "application/json; charset=utf-8" ],
+	      "Cache-Control" : [ "no-cache, no-store" ]
+	    },
+	    "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	    "delay" : {
+	      "timeUnit" : "SECONDS",
+	      "value" : 5
+	    }
+	  }
+	}
+
+2020-01-18 13:31:22,333 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:31:24,130 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:31:25,461 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops"
+	}
+
+2020-01-18 13:31:27,369 INFO [nioEventLoopGroup-3-3] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+2020-01-18 13:31:29,140 INFO [nioEventLoopGroup-3-4] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+2020-01-18 13:31:30,473 INFO [nioEventLoopGroup-3-5] o.mockserver.mock.HttpStateHandler [?:?] returning response:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ],
+	    "connection" : [ "keep-alive" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/shop-api/shops",
+	  "headers" : {
+	    "content-length" : [ "0" ],
+	    "host" : [ "localhost:1080" ],
+	    "accept-encoding" : [ "gzip" ],
+	    "user-agent" : [ "ReactorNetty/0.7.8.RELEASE" ],
+	    "accept" : [ "*/*" ]
+	  },
+	  "keepAlive" : true,
+	  "secure" : false
+	}
+
+ for response action:
+
+	{
+	  "statusCode" : 200,
+	  "headers" : {
+	    "Content-Type" : [ "application/json; charset=utf-8" ],
+	    "Cache-Control" : [ "no-cache, no-store" ]
+	  },
+	  "body" : "[{\"name\":\"London Book Shop\",\"currency\":\"GBP\"},{\"name\":\"Sydney Book Shop\",\"currency\":\"AUD\"},{\"name\":\"NewYork Book Shop\",\"currency\":\"USD\"}]",
+	  "delay" : {
+	    "timeUnit" : "SECONDS",
+	    "value" : 5
+	  }
+	}
+

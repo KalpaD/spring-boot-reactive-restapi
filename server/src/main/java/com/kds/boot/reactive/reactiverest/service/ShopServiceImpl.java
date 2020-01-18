@@ -48,7 +48,7 @@ public class ShopServiceImpl implements ShopService {
     public Flux<Shop> getShopsRemote() {
         log.info(">>> WebClient invoking the remote service.");
         Flux<Shop> shopFlux = webClient.get()
-                .retrieve().bodyToFlux(Shop.class);
+                .retrieve().bodyToFlux(Shop.class).log();
         log.info("<<< WebClient received the remote service response");
         return shopFlux;
     }
