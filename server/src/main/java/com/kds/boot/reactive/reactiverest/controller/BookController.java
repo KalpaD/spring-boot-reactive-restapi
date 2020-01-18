@@ -5,6 +5,7 @@ import com.kds.boot.reactive.reactiverest.model.Shop;
 import com.kds.boot.reactive.reactiverest.repository.BookRepository;
 import com.kds.boot.reactive.reactiverest.service.ShopService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
@@ -29,14 +30,17 @@ public class BookController {
     }
 
     @GetMapping(value = "/{id}")
-    public Mono<Book> get(@PathVariable(value = "id") long id) {
-        return bookRepository.findById(Long.toString(id));
+    public Mono<Book> get(@PathVariable(value = "id") String id) {
+        return bookRepository.findById(id);
     }
 
     @GetMapping(value = "/{id}/availability")
-    public Flux<Shop> getAvilability(@PathVariable(value = "id") long id) {
+    public Flux<Shop> getAvailability(@PathVariable(value = "id") String id) {
         log.info(">>> GET /books/{}/availability received", id);
-        Flux<Shop> shops = shopService.getShops();
+        Flux<Shop> shops = bookRepository.findById(id)
+                .doOnNext(book -> log.info("Book Name : " + book.getTitle()))
+                .flatMapMany(book -> shopService.getShops())
+                .doOnNext(shop -> log.info("Shop Name : " + shop.getName()));
         log.info("<<< GET /books/{}/availability responding", id);
         return shops;
     }
