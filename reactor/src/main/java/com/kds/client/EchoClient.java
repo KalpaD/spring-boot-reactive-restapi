@@ -16,46 +16,107 @@ public class EchoClient {
     final static Logger logger = Logger.getLogger(EchoClient.class);
 
     private static final String HOST = "localhost";
-    private static final int PORT = 7070;
-    int numT = 20;
+    private static final int PORT = 8888;
+    int numT = 1;
     ExecutorService executorService = Executors.newFixedThreadPool(numT);
 
     public static void main(String [] args) throws InterruptedException {
 
         EchoClient client = new EchoClient();
         client.runClient();
+        //client.runSingleClinet();
     }
 
     public void runClient() {
         while (numT > 0 ) {
-            executorService.submit(new Worker());
+            String id = "ClientId : " + numT;
+            executorService.submit(new Worker(id));
             numT--;
         }
         System.out.println("runClient: finished");
     }
 
-    public class Worker implements Runnable {
+    public void runSingleClinet() {
+        executorService.submit(new SingleWorker());
+    }
 
+    public class SingleWorker implements Runnable {
+
+        @Override
         public void run() {
-            for (int i = 0; i < 100; i++) {
+
+            Socket clientSocket = null;
+            try  {
+                clientSocket = new Socket(HOST, PORT);
+                DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
+                String message  = "Hello :" + 1 + "\n";
+                outToServer.writeBytes(message);
+                BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                String modifiedSentence = inFromServer.readLine();
+                System.out.println("Response from server: " + modifiedSentence);
+
                 try {
-                    Thread.sleep(300);
+                    Thread.sleep(30000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
-                try (Socket clientSocket = new Socket(HOST, PORT)) {
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (clientSocket != null) {
+                    try {
+                        clientSocket.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
 
+    public class Worker implements Runnable {
+
+        private String clientId;
+
+        public Worker(String clinetId) {
+            this.clientId = clinetId;
+        }
+
+        public void run() {
+            for (int i = 0; i < 20; i++) {
+
+
+                Socket clientSocket = null;
+                try  {
+                    clientSocket = new Socket(HOST, PORT);
                     DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
-                    outToServer.writeBytes("Hello : " + i + '\n');
+                    String message  = "Hello :" + i +" from "+ clientId + "\n";
+                    outToServer.writeBytes(message);
                     BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                     String modifiedSentence = inFromServer.readLine();
                     System.out.println("Response from server: " + modifiedSentence);
+
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
                 } catch (UnknownHostException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
+                } finally {
+                    if (clientSocket != null) {
+                        try {
+                            clientSocket.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
         }

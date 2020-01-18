@@ -34,6 +34,12 @@ public class BookController {
         return bookRepository.findById(id);
     }
 
+    /**
+     * The results of this endpoint is simulated via an artificial network delay by slowdown the shop service response.
+     *
+     * @param id The book id
+     * @return {@link Flux<Shop>}
+     */
     @GetMapping(value = "/{id}/availability")
     public Flux<Shop> getAvailability(@PathVariable(value = "id") String id) {
         log.info(">>> GET /books/{}/availability received", id);
@@ -45,6 +51,12 @@ public class BookController {
         return shops;
     }
 
+    /**
+     * Create a book in the book db.
+     *
+     * @param book The book details.
+     * @return The status of the book creation.
+     */
     @PostMapping(value = "")
     public Mono<ServerResponse> create(@RequestBody Book book) {
         bookRepository.save(book);
