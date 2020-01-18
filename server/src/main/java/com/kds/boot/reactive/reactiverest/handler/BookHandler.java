@@ -75,12 +75,8 @@ public class BookHandler {
     public Mono<ServerResponse> getAvailability(ServerRequest request) {
         log.info(">>> GET /books/{bookId}/availability entry log");
         String id = request.pathVariable("id");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         log.info(">>> GET /books/{bookId}/availability received", id);
+
         Flux<Shop> shops = bookRepository.findById(id)
                 .doOnNext(book -> log.info("Book Found Event : " + book.getTitle()))
                 .flatMapMany(book -> {
