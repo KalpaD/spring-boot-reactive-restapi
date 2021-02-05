@@ -4,7 +4,9 @@ import com.kds.boot.reactive.reactiverest.model.Book;
 import com.kds.boot.reactive.reactiverest.model.Shop;
 import com.kds.boot.reactive.reactiverest.repository.BookRepository;
 import com.kds.boot.reactive.reactiverest.service.ShopService;
+import com.kds.boot.reactive.reactiverest.validate.IdValidator;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +14,8 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.Map;
 
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
@@ -21,10 +25,12 @@ public class BookHandler {
 
     private final BookRepository bookRepository;
     private ShopService shopService;
+    private IdValidator idValidator;
 
-    public BookHandler(BookRepository bookRepository, ShopService shopService) {
+    public BookHandler(BookRepository bookRepository, ShopService shopService, IdValidator idValidator) {
         this.bookRepository = bookRepository;
         this.shopService = shopService;
+        this.idValidator = idValidator;
     }
 
     public Mono<ServerResponse> all(ServerRequest request) {
@@ -75,20 +81,26 @@ public class BookHandler {
     public Mono<ServerResponse> getAvailability(ServerRequest request) {
         log.info(">>> GET /books/{bookId}/availability entry log");
         String id = request.pathVariable("id");
-        log.info(">>> GET /books/{bookId}/availability received", id);
+        if (!idValidator.isValid(id)) {
+           return ServerResponse.badRequest().build();
+        }
+        log.info("Id Validation Completed", id);
 
-        Flux<Shop> shops = bookRepository.findById(id)
+        Flux<Map<String, Shop>> shops = bookRepository.findById(id)
                 .doOnNext(book -> log.info("Book Found Event : " + book.getTitle()))
+                .checkpoint("afterDbOperation")
                 .flatMapMany(book -> {
-                    log.info("Invoking shop service");
+                    log.info("Invoking shop service 1");
                     return shopService.getShopsRemote();
                 })
-                .doOnNext(shop -> {
-                    log.info("Shop Found Event : " + shop.getName());
-                }).doOnComplete(() -> {
+                .doOnNext(shopMap -> {
+                    log.info("Shop Found Event : " + shopMap.get("shop1").getName());
+                    log.info("Shop Found Event : " + shopMap.get("shop2").getName());
+                })
+                .doOnComplete(() -> {
                     log.info("<<< GET /books/{bookId}/availability responding", id);
                 });
-        return ServerResponse.ok().body(shops, Shop.class);
+        return ServerResponse.ok().body(shops, ParameterizedTypeReference.forType(Map.class));
     }
 
     public Mono<ServerResponse> create(@RequestBody Book book) {

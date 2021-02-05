@@ -5,8 +5,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Hooks;
+import reactor.core.publisher.Mono;
+import reactor.util.function.Tuple3;
 
 import java.time.Duration;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Random;
 
 @Service
@@ -59,13 +64,36 @@ public class ShopServiceImpl implements ShopService {
      * @return
      */
     @Override
-    public Flux<Shop> getShopsRemote() {
+    public Flux<Map<String, Shop>> getShopsRemote() {
+        Hooks.onOperatorDebug();
         log.info(">>> WebClient invoking the remote service.");
-        Flux<Shop> shopFlux = webClient.get()
+        Flux<Shop> shopFlux1 = webClient.get()
                 .retrieve().bodyToFlux(Shop.class)
+                .doOnNext(shop -> {
+                    log.info("event from WebClient1");
+                })
                 .doOnComplete(() -> {
-                    log.info("<<< WebClient received the remote service response");
+                    log.info("<<< WebClient1 received the remote service response");
                 });
-        return shopFlux;
+
+        Flux<Shop> shopFlux2 = webClient.get()
+                .retrieve().bodyToFlux(Shop.class)
+                .timeout(Duration.ofSeconds(2))
+                .doOnNext(shop -> {
+                    log.info("event from WebClient2");
+                })
+                .doOnComplete(() -> {
+                    log.info("<<< WebClient2 received the remote service response");
+                });
+
+        return Flux.zip(shopFlux1, shopFlux2, (shop1, shop2) -> {
+            Map<String, Shop> shopMap = new LinkedHashMap<>();
+            shopMap.put("shop1", shop1);
+            shopMap.put("shop2", shop2);
+            return shopMap;
+        }).doOnComplete(() -> {
+            log.info("<<< zip completed");
+            Mono.error(new RuntimeException("Boom!"));
+        });
     }
 }
